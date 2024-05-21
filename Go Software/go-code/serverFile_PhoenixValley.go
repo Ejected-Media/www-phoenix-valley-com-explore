@@ -50,5 +50,27 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
   pageType := ".."
   
   
+  pageData := htmlPageData {
+      pageTitle: pageTitle,
+      pagePath: pagePath,
+      
+      pageList: []pageNav {
+          { pageTitle: "one", pageLink: "one"},
+          { pageTitle: "two", pageLink: "two"},
+          { pageTitle: "three", pageLink: "three"},
+      },
+  	
+  }  //. .  pageData
+  
+  
+  pageFilePath := template.Must(template.ParseFiles("main_layout.html"))
+  pageFilePath.Execute(w, pageData)
+  
+}  //  .  appHandler
+
+  
+  
+  
+  
   
 }
