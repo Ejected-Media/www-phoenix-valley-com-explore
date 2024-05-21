@@ -33,3 +33,22 @@ type pageNav struct {
 }
 
 
+
+// . appHandler
+func appHandler(w http.ResponseWriter, r *http.Request) {
+
+    if r.URL.Path != "/app" {
+    	http.NotFound(w, r)
+    	return
+    }
+    
+// ,
+
+  pageTitle := "www.Phoenix-Valley.com - Explore - Website App"
+  pagePath := r.URL.Path
+  
+  pageType := ".."
+  
+  
+  
+}
