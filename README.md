@@ -28,3 +28,19 @@ _ ` ... ` ~
 
 _ ` ... ` ~
 
+~ Shop Oahu, in Phoenix °
+~ Local Island Style Product Brands °
+
+---  
+
+_ ` ... ` ~
+
+~ Shop Tucson °
+~ Tucson Tech Community ° 
+
+---  
+
+_ ` ... ` ~
+
+
+
