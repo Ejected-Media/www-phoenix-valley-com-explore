@@ -142,8 +142,8 @@ series.events.on("datavalidated", function() {
 // https://www.amcharts.com/docs/v5/concepts/settings/heat-rules/
 series.set("heatRules", [{
   target: series.columns.template,
-  min: am5.color(0xfffb77),
-  max: am5.color(0xfe131a),
+  min: am5.color(0xECE4B7),
+  max: am5.color(0x7DCFB6),
   dataField: "value",
   key: "fill"
 }]);
@@ -153,8 +153,8 @@ series.set("heatRules", [{
 // https://www.amcharts.com/docs/v5/concepts/legend/heat-legend/
 var heatLegend = chart.bottomAxesContainer.children.push(am5.HeatLegend.new(root, {
   orientation: "horizontal",
-  endColor: am5.color(0xfffb77),
-  startColor: am5.color(0xfe131a)
+  endColor: am5.color(0xECE4B7),
+  startColor: am5.color(0x7DCFB6)
 }));
 
 
@@ -853,7 +853,6 @@ am5.array.each(data, function(row) {
 yAxis.data.setAll(weekdays.map(function(item) {
   return { weekday: item }
 }));
-
 
 xAxis.data.setAll(hours.map(function(item) {
   return { hour: item }
