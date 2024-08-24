@@ -4,7 +4,9 @@
 <title>~ Map Page 01, Phoenix-Valley.com +</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-	
+body { }
+
+
 .sitename { font-size: 24px; }
 div.subtitle { font-size: 14px; margin-top: 5px; }
 
@@ -49,8 +51,8 @@ nav { margin: 15px; margin-top: 5px; }
 
 <script>
 var cities = L.layerGroup();
-var mLittleton = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities);
-var mDenver = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities);
+var mLittleton = L.marker([33.435249, -112.010216]).bindPopup('Sky Harbor, AZ.').addTo(cities);
+var mDenver = L.marker([33.4484 , -112.0740]).bindPopup('This is Phoenix.').addTo(cities);
 var mAurora = L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities);
 var mGolden = L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
