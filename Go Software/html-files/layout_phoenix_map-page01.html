@@ -6,7 +6,6 @@
 <style>
 body { }
 
-
 .sitename { font-size: 24px; }
 div.subtitle { font-size: 14px; margin-top: 5px; }
 
@@ -14,7 +13,6 @@ div.subtitle { font-size: 14px; margin-top: 5px; }
 .right_buttons { position: absolute; right: 10px; }
 
 nav { margin: 15px; margin-top: 5px; }
-
 
 #map { margin-top: 75px; }
 
@@ -51,10 +49,17 @@ nav { margin: 15px; margin-top: 5px; }
 
 <script>
 var cities = L.layerGroup();
-var mLittleton = L.marker([33.435249, -112.010216]).bindPopup('Sky Harbor, AZ').addTo(cities);
-var mDenver = L.marker([33.4484 , -112.0740]).bindPopup('This is Phoenix.').addTo(cities);
-var mAurora = L.marker([33.5100, -112.1289]).bindPopup('GCU, AZ').addTo(cities);
-var mGolden = L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
+
+var mSkyHarbor = L.marker([33.435249, -112.010216]).bindPopup('Sky Harbor, AZ').addTo(cities);
+
+var mPhx = L.marker([33.4484 , -112.0740]).bindPopup('This is Phoenix.').addTo(cities);
+
+var mASU = L.marker([33.5100, -112.1289]).bindPopup('GCU, AZ').addTo(cities);
+
+var mASU = L.marker([33.4230, -111.9278]).bindPopup('ASU, AZ').addTo(cities);
+
+
+
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -91,8 +96,12 @@ var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
 	maxZoom: 19,
 	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 });
+
+
 layerControl.addBaseLayer(openTopoMap, 'OpenTopoMap');
 layerControl.addOverlay(parks, 'Parks');
+
+
 </script>
 
 <div id="main_view"></div>
