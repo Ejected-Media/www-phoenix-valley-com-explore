@@ -11,9 +11,10 @@ div.subtitle { font-size: 14px; margin-top: 5px; }
 .top_bar_wrap { margin-bottom: 15px; }
 .right_buttons { position: absolute; right: 10px; }
 
-
 nav { margin: 15px; margin-top: 5px; }
 
+
+#map { margin-top: 75px; }
 
 </style>
 </head>
@@ -63,7 +64,7 @@ var osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
 });
 
 var map = L.map('map', {
-	center: [39.73, -104.99],
+	center: [33.4484 , -112.0740],
 	zoom: 10,
 	layers: [osm, cities]
 });
@@ -92,14 +93,8 @@ layerControl.addBaseLayer(openTopoMap, 'OpenTopoMap');
 layerControl.addOverlay(parks, 'Parks');
 </script>
 
-
-
-	
 <div id="main_view"></div>
 </main>
-
-
-
 
 
 </main>
