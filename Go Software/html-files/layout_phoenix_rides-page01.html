@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<title>~ Rides Page 01, Phoenix-Valley.com +</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+body { }
+
+.sitename { font-size: 24px; }
+div.subtitle { font-size: 14px; margin-top: 5px; }
+
+.top_bar_wrap { margin-bottom: 15px; }
+.right_buttons { position: absolute; right: 10px; }
+
+nav { margin: 15px; margin-top: 5px; }
+
+#map { margin-top: 75px; }
+
+</style>
+</head>
+<body>
+<div class="top_bar_wrap">
+<div class="sitename"># app ~ `Phoenix-Valley` Rides Page 01</div>
+<div class="subtitle">https://github.com/Ejected-Media/www-phoenix-valley-com-explore</div>
+<hr />
+<button onclick="window.location.href='https://github.com/Ejected-Media/www-phoenix-valley-com-explore'">Repo</button>
+<div class="right_buttons"><button>Nav</button></div>
+</div>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	</style>
+
+
+<div id='map'></div>
+
+<script>
+var cities = L.layerGroup();
+
+var mSkyHarbor = L.marker([33.435249, -112.010216]).bindPopup('Sky Harbor, AZ').addTo(cities);
+
+var mPhx = L.marker([33.4484 , -112.0740]).bindPopup('This is Phoenix.').addTo(cities);
+
+var mASU = L.marker([33.5100, -112.1289]).bindPopup('GCU, AZ').addTo(cities);
+
+var mASU = L.marker([33.4230, -111.9278]).bindPopup('ASU, AZ').addTo(cities);
+
+var mPhxZoo = L.marker([33.4500, -111.9470]).bindPopup('Phoenix Zoo').addTo(cities);
+
+
+
+var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+var osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+});
+
+var map = L.map('map', {
+	center: [33.4484 , -112.0740],
+	zoom: 10,
+	layers: [osm, cities]
+});
+
+var baseLayers = {
+	'OpenStreetMap': osm,
+	'OpenStreetMap.HOT': osmHOT
+};
+
+var overlays = {
+	'Cities': cities
+};
+
+var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
+
+var crownHill = L.marker([39.75, -105.09]).bindPopup('This is Crown Hill Park.');
+const rubyHill = L.marker([39.68, -105.00]).bindPopup('This is Ruby Hill Park.');
+
+var parks = L.layerGroup([crownHill, rubyHill]);
+
+var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+});
+
+
+layerControl.addBaseLayer(openTopoMap, 'OpenTopoMap');
+layerControl.addOverlay(parks, 'Parks');
+
+
+</script>
+
+<div id="main_view"></div>
+</main>
+
+
+</main>
+<footer>
+~ hi
+</footer>
+</body>
+</html>
